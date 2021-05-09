@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="explorer">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.2"
+        rpy="0 0 0" />
+      <mass
+        value="10" />
+      <inertia
+        ixx="0.01"
+        ixy="0"
+        ixz="0"
+        iyy="0.01"
+        iyz="0"
+        izz="0.01" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.3"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="1.2 0.5 0.35" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0.2"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="1.2 0.5 0.3" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="back_left">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.01"
+        ixy="0"
+        ixz="0"
+        iyy="0.01"
+        iyz="0"
+        izz="0.01" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/right_tyre.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 1.57" />
+      <geometry>
+    <cylinder length="0.156978" radius="0.1933135"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.457 0.31 0.217"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+  <link
+    name="back_right">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.01"
+        ixy="0"
+        ixz="0"
+        iyy="0.01"
+        iyz="0"
+        izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/left_tyre.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 1.57" />
+      <geometry>
+    <cylinder length="0.156978" radius="0.1933135"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.457 -0.312 0.217"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="middle_left">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.01"
+        ixy="0"
+        ixz="0"
+        iyy="0.01"
+        iyz="0"
+        izz="0.01" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/right_tyre.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 1.57" />
+      <geometry>
+    <cylinder length="0.156978" radius="0.1933135"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="middle_left_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.31 0.19796"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="middle_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="middle_right">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.01"
+        ixy="0"
+        ixz="0"
+        iyy="0.01"
+        iyz="0"
+        izz="0.01" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/left_tyre.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 1.57" />
+      <geometry>
+    <cylinder length="0.156978" radius="0.1933135"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="middle_right_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.312 0.19796"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="middle_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="front_left">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.01"
+        ixy="0"
+        ixz="0"
+        iyy="0.01"
+        iyz="0"
+        izz="0.01" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/right_tyre.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 1.57" />
+      <geometry>
+    <cylinder length="0.156978" radius="0.1933135"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.457 0.31 0.217"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="front_right">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.01"
+        ixy="0"
+        ixz="0"
+        iyy="0.01"
+        iyz="0"
+        izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/left_tyre.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.57 1.57" />
+      <geometry>
+    <cylinder length="0.156978" radius="0.1933135"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.457 -0.312 0.217"
+      rpy="0 0 0"  />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  
+<link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.01"
+        ixy="0"
+        ixz="0"
+        iyy="0.01"
+        iyz="0"
+        izz="0.01" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/rplidar.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/rplidar.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_base"
+    type="fixed">
+    <origin
+      xyz="0.45 0 0.48"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+<link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.01" />
+      <inertia
+        ixx="0.01"
+        ixy="0"
+        ixz="0"
+        iyy="0.01"
+        iyz="0"
+        izz="0.01" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 -0.05 0"
+        rpy="0 0 1.57" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 -0.05 0"
+        rpy="0 0 1.57" />
+      <geometry>
+        <mesh
+          filename="package://explorer/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.45 0 0.68"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <gazebo reference="front_right">
+ <material>Gazebo/Grey</material>
+</gazebo>
+
+  <gazebo reference="front_left">
+ <material>Gazebo/Grey</material>
+</gazebo>
+
+  <gazebo reference="middle_right">
+ <material>Gazebo/Grey</material>
+</gazebo>
+
+  <gazebo reference="middle_left">
+ <material>Gazebo/Grey</material>
+</gazebo>
+
+  <gazebo reference="back_right">
+ <material>Gazebo/Grey</material>
+</gazebo>
+
+  <gazebo reference="back_left">
+ <material>Gazebo/Grey</material>
+</gazebo>
+
+  <gazebo reference="base_link">
+ <material>Gazebo/Black</material>
+</gazebo>
+
+<gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <odometrySource>world</odometrySource>
+    <publishOdomTF>true</publishOdomTF>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <publishWheelTF>false</publishWheelTF>
+    <publishTf>true</publishTf>
+    <publishWheelJointState>true</publishWheelJointState>
+    <legacyMode>false</legacyMode>
+    <updateRate>30</updateRate>
+    <leftJoint>middle_left_joint</leftJoint>
+    <rightJoint>middle_right_joint</rightJoint>
+    <wheelSeparation>0.624</wheelSeparation>
+    <wheelDiameter>0.38</wheelDiameter>
+    <wheelAcceleration>1</wheelAcceleration>
+    <wheelTorque>10</wheelTorque>
+    <rosDebugLevel>na</rosDebugLevel>
+  </plugin>
+</gazebo>
+
+<gazebo reference="laser">
+  <sensor type="ray" name="lds_lfcd_sensor">
+    <pose>0 0 0 0 0 0</pose>
+    <update_rate>5</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples>
+          <resolution>1</resolution>
+          <min_angle>0.0</min_angle>
+          <max_angle>6.28319</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.120</min>
+        <max>30.0</max>
+        <resolution>0.015</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
+      <topicName>scan</topicName>
+      <frameName>laser</frameName>
+    </plugin>
+  </sensor>
+</gazebo>
+
+<gazebo reference="camera">
+  <sensor type="camera" name="camera">
+    <update_rate>10</update_rate>
+    <camera>
+      <horizontal_fov>1.570795</horizontal_fov>
+      <image>
+        <format>R8G8B8</format>
+        <width>740</width>
+        <height>480</height>
+      </image>
+      <clip>
+        <near>0.01</near>
+        <far>100</far>
+      </clip>
+    </camera>
+
+    <plugin name="camera" filename="libgazebo_ros_camera.so">
+      <cameraName>camera</cameraName>
+      <imageTopicName>image</imageTopicName>
+      <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+      <frameName>camera_frame</frameName>
+    </plugin>
+  </sensor>
+</gazebo>
+</robot>

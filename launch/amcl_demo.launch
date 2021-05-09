@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Run the map server -->
+  <arg name="map_file" default="$(find explorer)/map/mymap.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  <arg name="scan_topic" default="/scan" />
+
+  <!--- Run AMCL -->
+  <include file="$(find explorer)/launch/amcl.launch">
+    <arg name="scan_topic" value="$(arg scan_topic)" />
+  </include>
+
+  <!--- Run Move Base -->
+  <include file="$(find explorer)/launch/move_base.launch" />
+
+</launch>
